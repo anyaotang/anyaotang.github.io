@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<style> 
+	.input1{
+		margin-top: 3%;
+		border-color: white;
+		background-color: white;
+	    background-color: white;
+	    border:0px;
+	    margin-left: 30%; 
+	    width: 40px;
+	    height: 40px;
+	    border-radius: 30px; 
+	    text-align: center;
+	    transition: width 2s;
+			-moz-transition: width 2s;
+			/* Firefox 4 */
+			-webkit-transition: width 2s;
+			/* Safari and Chrome */
+			-o-transition:width 2s;
+			/* Opera */
+	}
+	.input2{
+		 width: 40px;
+	    height: 40px;
+	    border-radius: 30px;
+	    border: 0px;
+	    color: white;
+	    background-color: black;
+	}
+	.input1-2{
+		margin-top: 3%;
+		border-color: white;
+		background-color: white;
+	    background-color: white;
+	    border:0px;
+	    margin-left: 30%; 
+	    width: 40px;
+	    height: 40px;
+	    border-radius: 30px; 
+	    text-align: center;
+	     transition: width 2s;
+			-moz-transition: width 2s;
+			/* Firefox 4 */
+			-webkit-transition: width 2s;
+			/* Safari and Chrome */
+			-o-transition:width 2s;
+			/* Opera */
+	}
+	.input1:hover { opacity:0.8;}
+	*{
+ margin:0;
+ padding:0;
+}
+ 
+.nav{
+ background-color:white;
+ height:40px;
+ width:100%;
+ margin-left: 13%;
+}
+ 
+ul{
+ list-style:none;
+}
+ 
+ul li{
+ float:left;
+ line-height:40px;
+ text-align:center;
+ margin: 0 auto;
+}
+ 
+a{
+ text-decoration:none;
+ color:black;
+ display:block;
+ width:100px;
+ height:40px;
+}
+ 
+a:hover{
+ background-color:black;
+ color:white;
+}
+ 
+ul li ul li{
+ float:none;
+ background-color:black;
+}
+ 
+ul li ul{
+ display:none;
+}
+ 
+/*为了兼容IE7写的CSS样式，但是必须写在a:hover前面*/
+ 
+ul li ul li a:link,ul li ul li a:visited{
+ background-color:white;
+}
+ 
+ul li ul li a:hover{
+ background-color:black;
+}
+	</style>
+	<body>
+		
+		 	<div style="background-color:red; width: 100%; height: 100px; text-align: center;"> 
+		 		<div><li style=" width: 600px;font-size: 37px; display: inline;color: white;margin-left: 0%; float: left; line-height:100px;">中国人民大学 创业学院</li></div>
+		 		<input type="button" value="Click" placeholder="" class="input1" id="inputid1-1"/>
+		 		<input type="button" value="OK" placeholder="" class="input2"/>
+		 		
+		 	</div>
+		 		
+<div id="nav" class="nav">
+  <ul>
+ 
+    <li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >网站首页</a></li>
+ 
+   <li
+class="navmenu"><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >课程大厅</a>
+ 
+    <ul>
+ 
+     <li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >JavaScript</a></li>
+ 
+     <li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >jQuery</a></li>
+ 
+     <li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >Ajax</a></li>
+ 
+    </ul>
+ 
+   </li>
+ 
+   <li
+class="navmenu"><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >学习中心</a>
+ 
+    <ul>
+ 
+     <li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >视频学习</a></li>
+ 
+     <li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >案例学习</a></li>
+ 
+     <li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >交流平台</a></li>
+ 
+    </ul>
+ 
+   </li>
+ 
+   <li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >经典案例</a></li>
+ 
+   <li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >关于我们</a></li>
+<li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >关于我们</a></li>
+<li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >关于我们</a></li>
+<li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >关于我们</a></li>
+<li><a
+href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" >关于我们</a></li>
+  </ul>
+ 
+</div>
+</div>
+<div class="imgdiv1" style="background-image: url(img/QQ截图20190918212923.png);width: 100%; height: 300px;"></div>
+学院动态
+	</body>
+	<script>
+		
+		$(document).ready(function(){
+  $("#inputid1-1").click(function(){
+  	if($("#inputid1-1").attr("type")=="button"){
+  		 $("#inputid1-1").attr("type","text");
+  		 $("#inputid1-1").css("width","200");
+  		 $("#inputid1-1").attr("value",""); 
+  	}
+  });
+$("#inputid1-1").blur(function(){
+	if($("#inputid1-1").attr("type")=="text"){
+  		 $("#inputid1-1").attr("type","button");
+  		 $("#inputid1-1").attr("class","input1-2");
+  		 $("#inputid1-1").css("width","40");
+  		 $("#inputid1-1").attr("value","Click"); 
+  		}
+ });
+   $(function(){
+ 
+  $(".navmenu").mouseover(function(){
+ 
+   $(this).children("ul").show(); 
+ 
+  })
+ 
+    
+ 
+  $(".navmenu").mouseout(function(){
+ 
+   $(this).children("ul").hide();
+ 
+  })
+ 
+})
+});
+	</script>
+</html>
