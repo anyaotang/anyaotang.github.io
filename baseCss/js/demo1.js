@@ -7,4 +7,11 @@ $(function() {
 			window.location.href = 'youhuijuan.html'
 		}, 3000)
 	});
+	
+	$("#imgJuan").click(function() {
+		$("#imgJuan-alert").show();
+		setTimeout(function() {
+			$("#imgJuan-alert").hide();
+		}, 3000)
+	})
 })
