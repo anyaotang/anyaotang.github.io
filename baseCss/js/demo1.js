@@ -9,9 +9,10 @@ $(function() {
 	});
 	
 	$("#imgJuan").click(function() {
-		$("#imgJuan-alert").show();
-		setTimeout(function() {
-			$("#imgJuan-alert").hide();
-		}, 3000)
+		alert(121)
+// 		$("#imgJuan-alert").show();
+// 		setTimeout(function() {
+// 			$("#imgJuan-alert").hide();
+// 		}, 3000)
 	})
 })
