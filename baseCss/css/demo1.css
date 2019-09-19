@@ -127,3 +127,11 @@
 	text-align: center;
 	z-index: 9999;
 }
+
+/* 优惠券 */
+.imgs{
+	background-color: #FCA3B5;
+	text-align: center;
+	height: 100%;
+	height: 935px;
+}
