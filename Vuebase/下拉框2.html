@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		 <div id="app" >
+		
+    <div v-for="(item, key) in items" v-show="key<num">
+		<ul style="list-style: none;">
+			<li>{{item}}</li>
+		</ul>
+    </div>
+    <span @click="showMore" style="cursor:pointer;">{{txt}}</span>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data(){
+        return{
+          items: [
+            'a',
+            'b',
+            'c',
+            'd',
+            'e',
+            'f'
+          ],
+		  isShow:true,
+          txt: '显示全部',
+          num: 3
+        }
+      },
+      methods: {
+        showMore(){
+      /*    console.log('1', this.isShow); */
+          this.isShow = !this.isShow;
+   /*       console.log('2', this.isShow); */
+          this.num = this.isShow? 3: this.items.length;
+          this.txt = this.isShow?  '显示全部':'收起'
+        }
+      }
+    })
+  </script>
+	</body>
+</html>

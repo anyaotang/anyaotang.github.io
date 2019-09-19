@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/demo.css"/>
+	</head>
+	<body>
+		<!-- 
+		 v-bind指令可以在其名称后面带一个参数，中间放一个冒号隔开，
+		 这个参数通常是HTML元素的特性（attribute），例如：v-bind:class
+		v-bind:argument="expression"
+		 -->
+		<!-- <div id="app">
+		 	<ul class="pagination">
+				<!-- 注意v-for="n in pageCount"这行代码，pageCount是一个整数，遍历时n从0开始，然后遍历到pageCount –1结束。
+		 		<li v-for="n in pageCount">
+					<a href="javascripit:void(0)" v-bind:class="activeNumber === n+1?'active':''">
+						{{n+1}}
+					</a>
+				</li>
+		 	</ul>
+		 </div> -->
+		 
+		 <div id="app">
+			<ul class="pagination">
+				<li v-for="n in pageCount">
+					<a href="javascripit:void(0)" v-bind:class="activeNumber == n+1 ? 'active' : ''">{{ n + 1 }}</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		/* var vm=new Vue({
+			el:'#app',
+			data:{
+				activeNumber:1,
+				pageCount:10
+			}
+		}) */
+		
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				activeNumber:1,
+				pageCount: 20
+			}
+		})
+	</script>
+</html>

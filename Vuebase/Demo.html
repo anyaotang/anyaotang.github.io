@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/demo.css"/>
+		<style type="text/css">
+			td{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<fieldset id="">
+				<legend>添加</legend>
+				<div class="form-group">
+					<label>Name:</label>
+					<input type="text" v-model="newPerson.name"/>
+				</div>
+				<div class="form-group">
+					<label>Age:</label>
+					<input type="text" v-model="newPerson.age"/>
+				</div>
+				<div class="form-group">
+					<label>Sex:</label>
+					<select v-model="newPerson.sex">
+					<option value="Java">Java</option>
+					<option value="Java_web">Java Web</option>
+					<option value="Js">Js</option>
+				</select>
+				</div>
+				<div class="form-group">
+					<label></label>
+					<button @click="createPerson">Create</button>
+				</div>
+			</fieldset>
+			<div >
+				<table border="1px" cellspacing="0" cellpadding="0">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Age</th>
+							<th>Sex</th>
+							<th>option</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="person in people">
+							<td>{{person.name}}</td>
+							<td>{{person.age}}</td>
+							<td>{{person.sex}}</td>
+							<td :class="'text-center'">
+								<button type="button" @click="deletePerson($index)">Delete</button>
+								<button type="button" @click="updatePerson($index)">Update</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				newPerson: {
+					name: '',
+					age: 0,
+					sex: '男'
+				},
+				people:[{
+					name: 'Jack',
+					age: 30,
+					sex: 'Male'
+				},{
+					name: 'Bill',
+					age: 26,
+					sex: 'Male'
+				},{
+					name: 'Tracy',
+					age: 22,
+					sex: 'Female'
+				},{
+					name: 'Chris',
+					age: 36,
+					sex: 'Male'
+				}]
+			},
+			methods:{
+				//添加数据
+				createPerson:function(){
+					/* push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。 */
+					this.people.push(this.newPerson);
+					//添加完对象后,重置newPerson对象 
+					this.newPerson={name: '',age:0 ,sex: '男'}
+				},
+				//删除数据
+				/* splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。 */
+				deletePerson:function(index){
+					this.people.splice(index,1);
+				},
+				//修改数据
+				updatePerson:function(index){
+					
+				}
+			}
+		})
+		
+	</script>
+</html>
