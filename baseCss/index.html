@@ -3,134 +3,44 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>样机一</title>
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				list-style: none;
-			}
-			.base1 {
-				background-color:#fca3b5;
-				border-radius: 1.5em;
-				width: 700px;
-				height: 600px;
-				/* position: relative; */
-				margin: 10px auto;
-				padding:20px 0 20px 0;
-				box-sizing: border-box;
-				
-			}
-			.base2 {
-				background-color: #fe5e80;
-				border-radius: 1.4em;
-				width: 92%;
-				height: 100%;
-				/* position: absolute; */
-				margin: 0 auto;
-				padding:17px 0 17px 0;
-				box-sizing: border-box;
-			}
-			.base3 {
-				background-color: #FFFFFF;
-				border-radius: 1.4em;
-				width: 94%;
-				height: 100%;
-				/* position: absolute; */
-				margin: 0 auto;
-			}
-			.tit0 {
-				font-size: 40px;
-				font-family: 微软雅黑;
-				padding: 100px 0px 0px 58px;
-				color: #fe5e80;
-			}
-			.tit1 {
-				font-size: 70px;
-				font-family: 微软雅黑;
-				padding: 0px 0px 0px 58px;
-				color: #fe5e80;
-			}
-			.tit2 {
-				width: 55%;
-				margin-left:10%;
-				margin-top: 5px;
-				font-size: 25px;
-				font-family: 微软雅黑;
-				padding: 4px 0px 4px 15px;
-				color: #ffffff;
-				background-color: #FE5E80;
-				border-radius: 1.5em;
-			}
-			.tit3 {
-				margin-left:10%;
-				margin-top: 25px;
-				width: 55%;
-				font-size: 22px;
-				font-family: 微软雅黑;
-				color: #fe5e80;
-			}
-			/* .tit3 ul{
-				float: left;
-				padding-top: 15px; 
-			}
-			.tit3 ul li{
-				 float: left;
-			} */
-			.tit4 {
-				border: 1px solid red;
-				width: 55%;
-				margin-left:10%;
-/* 				margin-top: 25px; */
-				font-size: 20px;
-				font-family: 微软雅黑;
-				color: #fe5e80;
-			}
-			.tit4 .tit4_span {
-				font-size: 35px;
-			}
-			.tit4 .tit4_1 {
-				border: 1px solid red;
-				line-height: 48px;
-				font-family: 微软雅黑;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/demo1.css" />
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/demo1.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="base1">
-			 <div class="base2">
-			 	<div class="base3">
-			 		<div class="tit0">
-			 			文案文案
-			 		</div>
+			<div class="base2">
+				<div class="base3">
+					<div class="tit0">
+						文案文案
+					</div>
 					<div class="tit1">
 						文案文案
 					</div>
+					<div class="read-later-alert" style="display: none;">领取成功，正在跳转...</div>
 					<div class="tit2">
 						文案文案文案文案文案文案
 					</div>
 					<div class="tit3">
 						<ul>
 							<li>文案1</li>
-							<!-- <li style="padding-left: 55px;">文案2</li>
-							<li style="padding-left: 55px;">文案3</li> -->
 						</ul>
 					</div>
 					<div class="tit3">
 						<ul>
 							<li>文案1</li>
-							<!-- <li style="padding-left: 55px;">文案2</li>
-							<li style="padding-left: 55px;">文案3</li> -->
 						</ul>
 					</div>
 					<div class="tit4">
-						活动价￥<span class="tit4_span">299</span>
-						<span class="tit4_1">
-							点击领劵
-							<span></span>
-						</span>
+						<ul>
+							<li style="float: left;">活动价￥<span class="tit4_span">299</span></li>
+							<li class="tit4_1" id="tit4_1">点击领劵
+							</li>
+						</ul>
 					</div>
-			 	</div>
-			 </div>
+				</div>
+			</div>
 		</div>
+
 	</body>
 </html>

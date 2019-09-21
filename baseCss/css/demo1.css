@@ -1,0 +1,137 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.base1 {
+	background-color: #fca3b5;
+	border-radius: 1.5em;
+	width: 700px;
+	height: 600px;
+	/* position: relative; */
+	margin: 10px auto;
+	padding: 20px 0 20px 0;
+	box-sizing: border-box;
+
+}
+
+.base2 {
+	background-color: #fe5e80;
+	border-radius: 1.4em;
+	width: 92%;
+	height: 100%;
+	/* position: absolute; */
+	margin: 0 auto;
+	padding: 17px 0 17px 0;
+	box-sizing: border-box;
+}
+
+.base3 {
+	background-color: #FFFFFF;
+	border-radius: 1.4em;
+	width: 94%;
+	height: 100%;
+	/* position: absolute; */
+	margin: 0 auto;
+}
+
+.tit0 {
+	font-size: 40px;
+	font-family: 微软雅黑;
+	padding: 100px 0px 0px 58px;
+	color: #fe5e80;
+}
+
+.tit1 {
+	font-size: 70px;
+	font-family: 微软雅黑;
+	padding: 0px 0px 0px 58px;
+	color: #fe5e80;
+}
+
+.tit2 {
+	width: 55%;
+	margin-left: 10%;
+	margin-top: 5px;
+	font-size: 25px;
+	font-family: 微软雅黑;
+	padding: 4px 0px 4px 15px;
+	color: #ffffff;
+	background-color: #FE5E80;
+	border-radius: 1.5em;
+}
+
+.tit3 {
+	margin-left: 10%;
+	margin-top: 25px;
+	width: 55%;
+	font-size: 22px;
+	font-family: 微软雅黑;
+	color: #fe5e80;
+}
+
+.tit4 {
+	width: 60%;
+	margin-top: 1.26rem;
+	margin-left: 10%;
+	font-size: 20px;
+	font-family: 微软雅黑;
+	color: #fe5e80;
+}
+
+.tit4 .tit4_span {
+	font-size: 28px;
+}
+
+.tit4 .tit4_1 {
+	width: 130px;
+	font-family: 微软雅黑;
+	margin-left: 20px;
+	padding-left: 25px;
+	background-image: url(../img/yuanjiao.png);
+	background-size: 130px;
+	height: 33px;
+	line-height: 30px;
+	background-repeat: no-repeat;
+	float: left;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.yuanjiao {
+	background-color: #FE5E80;
+	border-radius: 100%;
+}
+
+.sanjiao {
+	content: "";
+	/* position: absolute; */
+	border-width: 0 15px 15px;
+	border-style: solid;
+	border-color: transparent transparent #fff;
+}
+
+.read-later-alert {
+	position: absolute;
+	left: 45%;
+	height: 35px;
+	line-height: 35px;
+	background: rgba(48, 48, 48, 0.8);
+	padding: 10px;
+	-moz-border-radius: 0.8em;
+	-webkit-border-radius: 0.8em;
+	color: #fff;
+	position: fixed;
+	display: none;
+	text-align: center;
+	z-index: 9999;
+}
+
+/* 优惠券 */
+.imgs{
+	background-color: #FCA3B5;
+	text-align: center;
+	height: 100%;
+	height: 935px;
+}

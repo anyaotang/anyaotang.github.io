@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- View -->
+		<div id="app">
+			{{message}}
+		</div>
+	</body>
+	<script type="text/javascript">
+		/* Model */
+		var exampleData={
+			message:'Hello Word!!!'
+		}
+		//创建一个Vue实例或"ViewModel"
+		//它连接View与ViewModel
+		new Vue({
+			el:'#app',
+			data:exampleData
+		})
+	</script>
+</html>
+
+<!-- 指令：以v-开头的，它们作用于HTML元素，指令提供了一些特殊的特性，
+将指令绑定在元素上时，指令会为绑定的目标元素添加一些特殊的行为，我们
+可以将指令看作特殊的HTML特性（attribute） -->
+<!-- 双向绑定使用：v-model -->
