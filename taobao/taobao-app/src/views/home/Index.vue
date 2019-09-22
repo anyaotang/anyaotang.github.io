@@ -4,8 +4,6 @@
       　　<swiper-slide>slide1</swiper-slide>
       　　<swiper-slide>slide2</swiper-slide>
       　　<div class="swiper-pagination" slot="pagination"></div>
-<!--  　　  <div class="swiper-button-prev" slot="button-prev"></div>-->
-<!--  　　  <div class="swiper-button-next" slot="button-next"></div>-->
       </swiper>
     </div>
 </template>
@@ -34,7 +32,7 @@
 
 <style scoped>
   .swiper-css {
-    height: 120px;
+    height: 80px;
     background-color: pink;
   }
 </style>
