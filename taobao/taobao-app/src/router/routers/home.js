@@ -1,7 +1,7 @@
 const Index = () => import(/* webpackChunkName: "group-home" */ '@/views/home/Index.vue')
 
 const router = {
-  path: '/index',
+  path: '/',
   name: 'Index',
   component: Index
 }
