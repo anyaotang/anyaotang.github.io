@@ -21,6 +21,6 @@
     height: 138px;
     background-image: url("../../assets/banner.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
   }
 </style>
