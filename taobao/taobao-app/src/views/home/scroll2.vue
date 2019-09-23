@@ -32,7 +32,7 @@
     },
     created() {
       // 使用假数据撑满屏幕
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i <= 5; i++) {
         this.headerData.push('第' + i + '条数据')
       };
       for (let i = 20; i < 80; i++) {
