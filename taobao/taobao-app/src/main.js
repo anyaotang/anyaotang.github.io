@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './assets/icon/iconfont.css'
 
 // swiper 插件
 import 'swiper/dist/css/swiper.css'
