@@ -5,11 +5,12 @@
        <span class="shopName">{{headInfo.shopName}}</span>
       </FlexboxItem>
       <FlexboxItem class="btn">
-        <button class="button"  @click="sheetVisible = true" size="large" ref="btn1"><i class="iconfont icon-guanzhu"  style="font-size: 20px;"></i>关注</button>
+<!--        <button class="button"  @click="sheetVisible = true" size="large" ref="btn1"><i class="iconfont icon-guanzhu"  style="font-size: 20px;"></i>关注</button>-->
+        <button class="button"  @click="sheetVisible = true" size="large" ref="btn1">已关注</button>
         <button class="btn_search button">
-          <span class="btn_close"></span>
-          <div class="btn_search btn_line"></div>
-          <span class=" close iconfont icon-close-small" style="font-size: 20px;"></span>
+          <span class="btn_close" @click="more"></span>
+<!--          <div class="btn_search btn_line"></div>-->
+<!--          <span class=" close iconfont icon-close-small" style="font-size: 20px;"></span>-->
         </button>
         <mt-actionsheet :actions="actions" v-model="sheetVisible" cancelText="容朕想想"></mt-actionsheet>
       </FlexboxItem>
@@ -32,7 +33,7 @@
 </template>
 
 <script>
-import { Flexbox, FlexboxItem } from 'vux'
+import { Flexbox, FlexboxItem, Toast  } from 'vux'
 // import HomeContent from "./HomeContent";
   export default {
     name: "headInfo",
@@ -68,11 +69,14 @@ import { Flexbox, FlexboxItem } from 'vux'
           this.$refs.btn1.style.innerText =  '已关注'
         }
       },
+      more () {
+        console.log(this.$vux)
+      }
     },
     components: {
-      // HomeContent,
       Flexbox,
-      FlexboxItem
+      FlexboxItem,
+      Toast
     },
     mounted() {
       this.actions = [{
@@ -98,7 +102,7 @@ import { Flexbox, FlexboxItem } from 'vux'
     font-size: 16px;
   }
   .con_icon {
-    padding-top: 10px;
+    padding-top: 4px;
   }
   .con_icon .flexbox-item {
     /*border: 1px solid red;*/
@@ -127,10 +131,11 @@ import { Flexbox, FlexboxItem } from 'vux'
   }
 
   .btn .button {
+    outline: none;
     background: none;
     border: 1px solid white;
     border-radius: 1.5em;
-    padding: 5px 9px 5px 9px;
+    padding: 4px 9px 4px 9px;
     color: white;
     margin-left: 4px;
   }
