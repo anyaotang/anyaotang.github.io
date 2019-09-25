@@ -49,12 +49,12 @@
           <div>
             <x-table full-bordered="true" class="xtable">
 <!--              <thead>-->
-<!--              <tr>-->
-<!--                <th>Product</th>-->
-<!--                <th>Price</th>-->
-<!--                <th>Quantity</th>-->
-<!--              </tr>-->
-<!--              </thead>-->
+              <!--              <tr>-->
+              <!--                <th>Product</th>-->
+              <!--                <th>Price</th>-->
+              <!--                <th>Quantity</th>-->
+              <!--              </tr>-->
+              <!--              </thead>-->
               <tbody class="tbody">
               <tr>
                 <td v-for="(item,index) in tableNumber" :key="index" style="border: 1px solid #080202;">
@@ -82,10 +82,18 @@
               <FlexboxItem class="FlexboxItem">132</FlexboxItem>
             </Flexbox>
             <Flexbox>
-              <FlexboxItem class="FlexboxItem">专区6折限时秒杀【看直播再领无门槛劵最高再减50元】</FlexboxItem>
+              <FlexboxItem class="FlexboxItem">
+                <span class="liu">
+                  专区<span style="color: #e20d00;">6折限时秒杀</span>【看直播再领无门槛劵最高<span style="color: #e20d00;">再减50元</span>】
+                </span>
+              </FlexboxItem>
             </Flexbox>
             <Flexbox>
-              <FlexboxItem class="FlexboxItem">132</FlexboxItem>
+              <FlexboxItem class="FlexboxItem">
+                <div class="fen">
+                  <span>疯抢中<i></i></span>
+                </div>
+              </FlexboxItem>
             </Flexbox>
           </div>
         </div>
@@ -346,5 +354,17 @@
   .special .FlexboxItem {
     text-align: center;
     height: 30px;
+  }
+  .liu {
+    font-size: 11px;
+  }
+  .fen {
+    width: 20%;
+    margin: 0 auto;
+    color: #ffdf18;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    background-color: black;
+    padding: 1px;
   }
 </style>

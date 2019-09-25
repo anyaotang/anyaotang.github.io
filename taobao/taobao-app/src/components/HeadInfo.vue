@@ -40,7 +40,7 @@ import { Flexbox, FlexboxItem, Toast  } from 'vux'
     data () {
         return {
           headInfo: {
-            shopName: '森女部落',
+            shopName: '蜗牛工作室',
             img: require("../assets/imghead.jpg"),
             number: '973'
           },
