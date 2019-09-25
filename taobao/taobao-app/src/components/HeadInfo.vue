@@ -5,11 +5,13 @@
        <span class="shopName">{{headInfo.shopName}}</span>
       </FlexboxItem>
       <FlexboxItem class="btn">
-        <span class="button">已关注</span>
-        <div class="btn_search button">
+        <button class="button"  @click="sheetVisible = true" size="large" ref="btn1"><i class="iconfont icon-guanzhu"  style="font-size: 20px;"></i>关注</button>
+        <button class="btn_search button">
           <span class="btn_close"></span>
-          <span class="iconfont icon-baseline-close-px"></span>
-        </div>
+          <div class="btn_search btn_line"></div>
+          <span class=" close iconfont icon-close-small" style="font-size: 20px;"></span>
+        </button>
+        <mt-actionsheet :actions="actions" v-model="sheetVisible" cancelText="容朕想想"></mt-actionsheet>
       </FlexboxItem>
     </Flexbox>
     <flexbox class="con_icon">
@@ -25,11 +27,13 @@
       </flexbox-item>
       <flexbox-item class="flexbox-item" :span="1/4">粉丝数{{headInfo.number}}万</flexbox-item>
     </flexbox>
+<!--    <HomeContent/>-->
   </div>
 </template>
 
 <script>
 import { Flexbox, FlexboxItem } from 'vux'
+// import HomeContent from "./HomeContent";
   export default {
     name: "headInfo",
     data () {
@@ -45,15 +49,41 @@ import { Flexbox, FlexboxItem } from 'vux'
             require("../assets/huangguan.png"),
             require("../assets/huangguan.png"),
             require("../assets/huangguan.png"),
-          ]
+          ],
+          sheetVisible: false,
+          actions: [],
         }
     },
     methods: {
-
+      openAlbum() {
+        console.log('容朕想想');
+      },
+      takePhoto() {
+        console.log(this.sheetVisible);
+        if (this.sheetVisible){
+          this.sheetVisible = false
+          this.$refs.btn1.style.innerText =  '关注'
+        } else {
+          this.sheetVisible = true
+          this.$refs.btn1.style.innerText =  '已关注'
+        }
+      },
     },
     components: {
+      // HomeContent,
       Flexbox,
       FlexboxItem
+    },
+    mounted() {
+      this.actions = [{
+        name: '取消关注',
+        method: this.takePhoto
+      },
+      //   {
+      //   name: '容朕想想',
+      //   method: this.openAlbum
+      // }
+      ];
     }
   }
 </script>
@@ -61,7 +91,7 @@ import { Flexbox, FlexboxItem } from 'vux'
 <style scoped >
   .con {
     color: white;
-    padding: 20px 10px 0px 10px;
+    padding: 16px 10px 0px 10px;
     font-size: 12px;
   }
   .shopName{
@@ -72,6 +102,12 @@ import { Flexbox, FlexboxItem } from 'vux'
   }
   .con_icon .flexbox-item {
     /*border: 1px solid red;*/
+  }
+  .btn_line {
+    border-right:1px solid white;
+    padding-left: 6px;
+    height: 25px;
+    line-height: 25px;
   }
   img {
     width: 50px;
@@ -93,8 +129,8 @@ import { Flexbox, FlexboxItem } from 'vux'
   .btn .button {
     background: none;
     border: 1px solid white;
-    border-radius: 1em;
-    padding: 8px 9px 5px 9px;
+    border-radius: 1.5em;
+    padding: 5px 9px 5px 9px;
     color: white;
     margin-left: 4px;
   }
@@ -102,27 +138,11 @@ import { Flexbox, FlexboxItem } from 'vux'
     display: inline;
   }
 
-  .btn .btn_close {
-    color: white;
-  }
   .btn .btn_close::after {
     content: "• • • ";
     font-size: 15px;
   }
-  /*#close {*/
-  /*  display: inline-block;*/
-  /*  width: 15px;*/
-  /*  height: 2px;*/
-  /*  background: white;*/
-  /*  transform: rotate(45deg);*/
-  /*}*/
-
-  /*#close::after {*/
-  /*  content: '';*/
-  /*  display: block;*/
-  /*  width: 15px;*/
-  /*  height: 2px;*/
-  /*  background: white;*/
-  /*  transform: rotate(-90deg);*/
-  /*}*/
+  .close {
+    padding-left: 7px;
+  }
 </style>

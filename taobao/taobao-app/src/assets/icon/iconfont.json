@@ -6,11 +6,18 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "7826085",
-      "name": "close",
-      "font_class": "baseline-close-px",
-      "unicode": "e615",
-      "unicode_decimal": 58901
+      "icon_id": "7570003",
+      "name": "search close",
+      "font_class": "close-small",
+      "unicode": "e51c",
+      "unicode_decimal": 58652
+    },
+    {
+      "icon_id": "10300501",
+      "name": "关注",
+      "font_class": "guanzhu",
+      "unicode": "e6f8",
+      "unicode_decimal": 59128
     }
   ]
 }

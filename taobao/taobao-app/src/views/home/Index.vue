@@ -1,18 +1,27 @@
 <template>
     <div class="banner">
-<!--      <Scroll1/>-->
-<!--      <Scroll2/>-->
       <HeadInfo/>
+      <Scroll/>
     </div>
 </template>
 
 <script>
-    import Scroll1 from "./scroll1";
-    import Scroll2 from "./scroll2";
-    import HeadInfo from '../../components/headInfo'
+    import Scroll from "./scroll";
+    import HeadInfo from '../../components/HeadInfo'
+    import { Tab, TabItem } from 'vux'
     export default {
       name: "Index",
-      components: { Scroll2, Scroll1, HeadInfo}
+      components: {
+        Scroll,
+        HeadInfo,
+        Tab,
+        TabItem
+      },
+      data () {
+        return {
+
+        }
+      }
     }
 </script>
 
@@ -23,4 +32,5 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
 </style>
