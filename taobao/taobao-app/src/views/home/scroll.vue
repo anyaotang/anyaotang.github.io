@@ -5,20 +5,21 @@
             <tab-item v-for="(item,index) in tabItems" :key="index">{{item.status}}</tab-item>
           </tab>
       </sticky-slot>
-      <div class="box" ref="box">
+      <div>
+        <div class="box" ref="box">
         <span class="name">
           {{boxItem.name}}
         </span>
-        <span class="time">{{boxItem.time}}</span>
-        <span>每满{{boxItem.num1}}减{{boxItem.num2}},上不封顶</span>
-      </div>
-      <div class="liveBroadcast">
+          <span class="time">{{boxItem.time}}</span>
+          <span>每满{{boxItem.num1}}减{{boxItem.num2}},上不封顶</span>
+        </div>
+        <div class="liveBroadcast">
 
-      </div>
-      <sticky-slot class="stickyTop1">
-        <div class="tab">
-          <swiper :options="swiperOption" class="swiper-css">
-        　　<swiper-slide v-for="(item,index) in swiperNum" :key="index" class="color1">
+        </div>
+        <sticky-slot class="stickyTop1">
+          <div class="tab">
+            <swiper :options="swiperOption" class="swiper-css">
+              　　<swiper-slide v-for="(item,index) in swiperNum" :key="index" class="color1">
               <div>
                 <div class="color2">
                   <h5>{{item.title}}</h5>
@@ -27,12 +28,16 @@
                 <div class="activity" ref="activity">{{item.activity}}</div>
               </div>
             </swiper-slide>
-          </swiper>
+            </swiper>
+          </div>
+        </sticky-slot>
+        <!--聚划算-->
+        <div class="con">
+          <ul>
+            <li v-for="(item, index) in footerData" :key="index">{{ item }}</li>
+          </ul>
         </div>
-      </sticky-slot>
-      <ul>
-        <li v-for="(item, index) in footerData" :key="index">{{ item }}</li>
-      </ul>
+      </div>
     </div>
 </template>
 
@@ -122,7 +127,7 @@
       }
     },
     mounted() {
-      this.$refs.box.style.backgroundColor = 'gold'
+
     }
 
   }
@@ -157,6 +162,7 @@
     padding-left: 15px;
     color: #eb2b20;
     font-size: 12px;
+    background-color: gold;
   }
   .name {
     width: 80px;
@@ -208,5 +214,8 @@
     font-size: 11px;
     padding-top: 2px;
     color: #eb2b20;
+  }
+  .con {
+    background-color: #ffdf18;
   }
 </style>
