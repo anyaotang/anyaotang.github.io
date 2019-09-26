@@ -455,7 +455,7 @@
     border-top-right-radius: 0.5em;
     font-size: 12px;
     padding: 2px;
-    font-weight: 600;
+    font-weight: 800;
   }
   .div19_1 {
     text-align: center;
@@ -466,15 +466,15 @@
     text-align: center;
   }
   .div19_1 div,.div19_2 div {
-    font-size: 15px;
+    font-size: 12px;
     color: #eb4e0b;
     letter-spacing: 0.2em;
   }
   .div19_1 .span1,.div19_2 .span1 {
     letter-spacing: 0.3em;
-    font-size: 9px;
+    font-size: 5px;
   }
   .div19_1 .span2,.div19_2 .span2 {
-    font-size: 10px;
+    font-size: 4px;
   }
 </style>
