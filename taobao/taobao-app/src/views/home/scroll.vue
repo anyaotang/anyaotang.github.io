@@ -96,6 +96,41 @@
               </FlexboxItem>
             </Flexbox>
           </div>
+          <div style="position: relative">
+            <div class="clearance borderColor">
+
+            </div>
+            <div class="clearbtn">点击抢购</div>
+          </div>
+          <div style="position: relative">
+            <img class="welfareimg" src="../../assets/xiong.jpg" alt="">
+            <img class="welfareimg1" src="../../assets/fulidai.png" alt="">
+            <div class="welfare">
+
+            </div>
+          </div>
+          <!--拯救吃土少女-->
+          <div class="div18 borderColor">
+
+          </div>
+          <div class="div19 borderColor">
+              <flexbox>
+                <flexbox-item :span="2/4">
+                  <div class="div19_1">
+                    <span class="span1">{{div19Item1.title}}</span>
+                    <div>{{div19Item1.introduce}}</div>
+                    <span class="span2">{{div19Item1.content}}</span>
+                  </div>
+                </flexbox-item>
+                <flexbox-item :span="2/4" style="margin-left: 0px;">
+                    <div class="div19_2">
+                      <span class="span1">{{div19Item2.title}}</span>
+                      <div>{{div19Item2.introduce}}</div>
+                      <span class="span2">{{div19Item2.content}}</span>
+                    </div>
+                </flexbox-item>
+              </flexbox>
+          </div>
         </div>
       </div>
     </div>
@@ -138,13 +173,6 @@
                 el: '.swiper-pagination',
                 clickable: true // 允许点击小圆点跳转
               },
-              // slidesPerView: 4,
-              // slidesPerColumn: 1,
-              // spaceBetween: 5,
-              // autoplay: {
-              //   delay: 3000,
-              //   disableOnInteraction: false // 手动切换之后继续自动轮播
-              // },
               loop: false
             },
             colors : {
@@ -189,7 +217,17 @@
               {time: '9.22~9.26',type: '店铺微淘',introduction: '2.5W + 实物福利'},
               {time: '9.22~9.26',type: '店铺微淘',introduction: '2.5W + 实物福利'},
               {time: '9.22~9.26',type: '店铺微淘',introduction: '2.5W + 实物福利'},
-            ]
+            ],
+            div19Item1: {
+              title: '『转发抽奖』',
+              introduce: '微博·孤版样衣',
+              content: '蜗牛微博：蜗牛工作室WNGZS'
+            },
+            div19Item2: {
+                title: '『互动抽奖』',
+                introduce: '微信·绝版美衣',
+                content: '蜗牛微信：蜗牛工作室'
+              }
           }
       },
     components: {
@@ -295,6 +333,8 @@
   }
   .con {
     background-color: #ffdf18;
+    padding-bottom: 5px;
+    font-family: 微软雅黑;
   }
   .con_active {
     height: 35px;
@@ -366,5 +406,75 @@
     letter-spacing: 0.2em;
     background-color: black;
     padding: 1px;
+  }
+  .clearance {
+    height: 250px;
+    border-radius: 0.5em;
+    /*position: relative;*/
+    margin: 0 auto;
+  }
+  .clearbtn {
+    border: 1px solid black;
+    padding: 3px 12px 3px 12px;
+    border-radius: 2em;
+    color: white;
+    width: 13%;
+    background-color: #e20d00;
+    font-size: 12px;
+    margin: 0 auto;
+    position: absolute;
+    top:95%;
+    left: 0;
+    right: 0;
+  }
+  .welfareimg {
+    width: 14%;
+    margin-top: 20px;
+    margin-left: 4em;
+  }
+  .welfareimg1 {
+    width: 30%;
+    position: absolute;
+    top: 12px;
+    left: 5px;
+  }
+  .welfare {
+    width: 92%;
+    height: 70px;
+    border: 2px dashed black;
+    border-radius: 3em;
+    margin: 0px auto;
+  }
+  .div18{
+    height: 120px;
+    border-radius:0.5em ;
+  }
+  .div19 {
+    background-color: #ffdf18;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    font-size: 12px;
+    padding: 2px;
+    font-weight: 600;
+  }
+  .div19_1 {
+    text-align: center;
+    border-top-left-radius: 0.5em;
+    background: linear-gradient(90deg,#fddd19,#f1c617);
+  }
+  .div19_2 {
+    text-align: center;
+  }
+  .div19_1 div,.div19_2 div {
+    font-size: 15px;
+    color: #eb4e0b;
+    letter-spacing: 0.2em;
+  }
+  .div19_1 .span1,.div19_2 .span1 {
+    letter-spacing: 0.3em;
+    font-size: 9px;
+  }
+  .div19_1 .span2,.div19_2 .span2 {
+    font-size: 10px;
   }
 </style>
