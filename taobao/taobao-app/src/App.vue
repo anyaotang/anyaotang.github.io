@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <router-view/>
-<!--    <button>ssss</button>-->
   </div>
 </template>
 

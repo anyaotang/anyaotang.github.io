@@ -3,19 +3,34 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// 引入图标样式
-import '@/assets/icon/iconfont.css'
 
+// 引入字体图标样式
+import '@/assets/icon/iconfont.css'
 // swiper 插件
 import 'swiper/dist/css/swiper.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-Vue.use(VueAwesomeSwiper)
-
 // 引入mimtUI组件
 import Mint from 'mint-ui';
-Vue.use(Mint);
 import 'mint-ui/lib/style.css'
 
+// 上拉刷新，下拉加载
+import VueScroller from 'vue-scroller'
+
+// vux组件
+import {LoadingPlugin, ToastPlugin, ConfirmPlugin, DatetimePlugin, Divider, Badge} from 'vux'
+
+/**
+ * 挂载全局样式属性
+ */
+Vue.use(Mint);
+Vue.use(VueAwesomeSwiper)
+Vue.use(VueScroller)
+Vue.use(LoadingPlugin)
+Vue.use(ToastPlugin)
+Vue.use(ConfirmPlugin)
+Vue.use(DatetimePlugin)
+Vue.component('divider', Divider)
+Vue.component('badge', Badge)
 
 Vue.config.productionTip = false
 

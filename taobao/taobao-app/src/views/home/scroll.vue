@@ -1,10 +1,10 @@
 <template>
     <div class="backColor">
-      <sticky-slot class="stickyTop">
-          <tab>
-            <tab-item v-for="(item,index) in tabItems" :key="index">{{item.status}}</tab-item>
-          </tab>
-      </sticky-slot>
+<!--      <sticky-slot class="stickyTop">-->
+<!--          <tab>-->
+<!--            <tab-item v-for="(item,index) in tabItems" :key="index">{{item.status}}</tab-item>-->
+<!--          </tab>-->
+<!--      </sticky-slot>-->
       <div>
         <div class="box" ref="box">
         <span class="name">
@@ -19,15 +19,16 @@
         <sticky-slot class="stickyTop1">
           <div class="tab">
             <swiper :options="swiperOption" class="swiper-css">
-              　　<swiper-slide v-for="(item,index) in swiperNum" :key="index" class="color1">
-              <div>
-                <div class="color2">
-                  <p class="tit">{{item.title}}</p>
-                  <p>{{item.content}}</p>
+          　　<swiper-slide v-for="(item,index) in swiperNum" :key="index" class="color1">
+                <div>
+                  <div class="color2">
+                    <p class="tit">{{item.title}}</p>
+                    <p>{{item.content}}</p>
+                  </div>
+                  <div class="activity" ref="activity">{{item.activity}}</div>
                 </div>
-                <div class="activity" ref="activity">{{item.activity}}</div>
-              </div>
-            </swiper-slide>
+              </swiper-slide>
+<!--              <div class="left">向左滑动</div>-->
             </swiper>
           </div>
         </sticky-slot>
@@ -117,16 +118,16 @@
               <flexbox>
                 <flexbox-item :span="2/4">
                   <div class="div19_1">
-                    <span class="span1">{{div19Item1.title}}</span>
-                    <div>{{div19Item1.introduce}}</div>
-                    <span class="span2">{{div19Item1.content}}</span>
+                    <div class="span1">{{div19Item1.title}}</div>
+                    <div class="span3">{{div19Item1.introduce}}</div>
+                    <div class="span2">{{div19Item1.content}}</div>
                   </div>
                 </flexbox-item>
                 <flexbox-item :span="2/4" style="margin-left: 0px;">
                     <div class="div19_2">
-                      <span class="span1">{{div19Item2.title}}</span>
-                      <div>{{div19Item2.introduce}}</div>
-                      <span class="span2">{{div19Item2.content}}</span>
+                      <div class="span1">{{div19Item2.title}}</div>
+                      <div class="span3">{{div19Item2.introduce}}</div>
+                      <div class="span2">{{div19Item2.content}}</div>
                     </div>
                 </flexbox-item>
               </flexbox>
@@ -173,7 +174,7 @@
                 el: '.swiper-pagination',
                 clickable: true // 允许点击小圆点跳转
               },
-              loop: false
+              loop: true
             },
             colors : {
               color1: '#fff5dc',
@@ -258,14 +259,28 @@
     margin-top: 5px;
     top: 44px;
     z-index: 10;
+    /*position: relative;*/
   }
   .tab {
+    /*border: 1px solid red;*/
     margin-top: 11px;
   }
   .swiper-css {
     height: 94px;
     background-color: white;
-    position: relative;
+  }
+  .left {
+    width: 10px;
+    line-height: 11px;
+    padding: 1px;
+    background-color: white;
+    color: #eb2b20;
+    font-size: 8px;
+    /*position: absolute;*/
+    position: fixed;
+    z-index: 9999;
+    top: 10px;
+    /*right: -10px;*/
   }
   .box {
     height: 40px;
@@ -418,7 +433,7 @@
     padding: 3px 12px 3px 12px;
     border-radius: 2em;
     color: white;
-    width: 13%;
+    width: 16%;
     background-color: #e20d00;
     font-size: 12px;
     margin: 0 auto;
@@ -429,13 +444,13 @@
   }
   .welfareimg {
     width: 14%;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: 4em;
   }
   .welfareimg1 {
     width: 30%;
     position: absolute;
-    top: 12px;
+    top: 20px;
     left: 5px;
   }
   .welfare {
@@ -454,27 +469,30 @@
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
     font-size: 12px;
-    padding: 2px;
+    padding-top: 1px;
     font-weight: 800;
   }
   .div19_1 {
+    padding: 8px 0px 5px 0px;
     text-align: center;
     border-top-left-radius: 0.5em;
     background: linear-gradient(90deg,#fddd19,#f1c617);
   }
   .div19_2 {
+    padding: 8px 0px 5px 0px;
     text-align: center;
   }
-  .div19_1 div,.div19_2 div {
+
+  .div19_1 .span1,.div19_2 .span1 {
+    letter-spacing: 0.3em;
+    font-size: 8px;
+  }
+  .div19_1 .span2,.div19_2 .span2 {
+    font-size: 8px;
+  }
+  .div19_1 .span3,.div19_2 .span3 {
     font-size: 12px;
     color: #eb4e0b;
     letter-spacing: 0.2em;
-  }
-  .div19_1 .span1,.div19_2 .span1 {
-    letter-spacing: 0.3em;
-    font-size: 5px;
-  }
-  .div19_1 .span2,.div19_2 .span2 {
-    font-size: 4px;
   }
 </style>
