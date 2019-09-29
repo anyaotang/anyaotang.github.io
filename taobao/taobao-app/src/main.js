@@ -19,6 +19,9 @@ import VueScroller from 'vue-scroller'
 // vux组件
 import {LoadingPlugin, ToastPlugin, ConfirmPlugin, DatetimePlugin, Divider, Badge} from 'vux'
 
+// 引入storeVuex
+import store from './store/store'
+
 /**
  * 挂载全局样式属性
  */
@@ -38,6 +41,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store, // 使用store
   components: { App },
   template: '<App/>'
 })

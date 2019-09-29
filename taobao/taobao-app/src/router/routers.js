@@ -1,5 +1,4 @@
 import home from './routers/home'
-
 const routers = [
   home
 ]

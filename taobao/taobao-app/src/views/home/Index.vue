@@ -37,23 +37,21 @@
           </tab>
         </sticky-slot>
 
-        <swiper v-model="index01" :show-dots="false">
-          <swiper-item v-for="(item,index) in tabContent" :key="index">
-            <div v-if="index01 === index"  class="tab-swiper vux-center">
-              <scroller :on-refresh="refresh" :on-infinite="infinite" ref="myscroller">
-<!--                {{item.path}}-->
-<!--                this.$router.push({-->
-<!--                      path: {{item.path}}-->
-<!--                })-->
-                <router-link :to="item.path">第二页</router-link>
-              </scroller>
-            </div>
-          </swiper-item>
-        </swiper>
+<!--        <swiper v-model="index01" :show-dots="false" style="height: 2000px;">-->
+<!--          <swiper-item v-for="(item,index) in tabContent" :key="index">-->
+<!--            <div v-if="index01 === index" >-->
+<!--&lt;!&ndash;              <scroller :on-refresh="refresh" :on-infinite="infinite" ref="myscroller">&ndash;&gt;-->
+<!--                  <component :is="item.path"></component>-->
+<!--&lt;!&ndash;              </scroller>&ndash;&gt;-->
+<!--            </div>-->
+<!--          </swiper-item>-->
+<!--        </swiper>-->
+        <div v-model="index01" v-for="(item,index) in tabContent" :key="index">
+          <div v-if="index01 === index" >
+            <component :is="item.path"></component>
+          </div>
+        </div>
       </div>
-<!--      <Dao/>-->
-<!--      <Scroll/>-->
-<!--      <TestNav/>-->
     </div>
 </template>
 
@@ -108,13 +106,13 @@
             {status: "会员", id: 6}
           ],
           tabContent: [
-            {path: '../scroll'},
             {path: 'scroll'},
-            {path: 'scroll'},
-            {path: 'scroll'},
-            {path: 'scroll'},
-            {path: 'scroll'},
-            {path: 'scroll'}
+            // {path: 'scroll'},
+            // {path: 'scroll'},
+            // {path: 'scroll'},
+            // {path: 'scroll'},
+            // {path: 'scroll'},
+            // {path: 'scroll'}
           ],
           index01: 0,
           index: 0,
@@ -257,13 +255,16 @@
   .backColor {
     background-color: white;
   }
-  .tab-swiper {
-    background-color: indianred;
-    height: 100px;
-  }
+  /*.tab-swiper {*/
+  /*  background-color: indianred;*/
+  /*  !*height: 100px;*!*/
+  /*}*/
   .stickyTop {
     margin-top: 5px;
     top: 0;
     z-index: 10;
+  }
+  .vux-swiper {
+    height: 3000px;
   }
 </style>

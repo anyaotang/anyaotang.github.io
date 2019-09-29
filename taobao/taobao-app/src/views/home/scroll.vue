@@ -1,10 +1,5 @@
 <template>
     <div class="backColor">
-<!--      <sticky-slot class="stickyTop">-->
-<!--          <tab>-->
-<!--            <tab-item v-for="(item,index) in tabItems" :key="index">{{item.status}}</tab-item>-->
-<!--          </tab>-->
-<!--      </sticky-slot>-->
       <div>
         <div class="box" ref="box">
         <span class="name">
@@ -250,11 +245,6 @@
   /*
    通过设置top的值，控制固定的位置，0是顶部，值为number(px)
  */
-  .stickyTop {
-    margin-top: 5px;
-    top: 0;
-    z-index: 10;
-  }
   .stickyTop1 {
     margin-top: 5px;
     top: 44px;
