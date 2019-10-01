@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import stickySlot from '../../components/StickySlot'
+  import stickySlot from '../stickySlot/StickySlot'
   import { Tab, TabItem, Swiper, SwiperItem } from 'vux'
   export default {
     name: "scroll2",

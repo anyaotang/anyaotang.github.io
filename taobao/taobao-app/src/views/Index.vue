@@ -56,43 +56,41 @@
 </template>
 
 <script>
-    import Scroll from "./scroll";
-    import HeadInfo from '../../components/HeadInfo'
-    import Dao from '../../components/Dao'
-    import stickySlot from '../../components/StickySlot'
+    import homePage from "./home/homePage";
+    import stickySlot from '../components/stickySlot/StickySlot'
     import { Tab, TabItem, Flexbox, FlexboxItem, Toast, Swiper, SwiperItem } from 'vux'
-    import TestNav from "../../components/testNav";
-    import Headers from '../../components/home/headers'
+    // import TestNav from "../components/testNav";
+    // import Headers from '../components/home/headers'
+    // import Dao from '../components/Dao'
     export default {
       name: "Index",
       components: {
-        TestNav,
-        Scroll,
-        HeadInfo,
+        homePage,
+        stickySlot,
         Tab,
         TabItem,
-        Dao,
-        Headers,
         Flexbox,
         FlexboxItem,
         Toast,
         Swiper,
         SwiperItem,
-        stickySlot,
+        // TestNav,
+        // Dao,
+        // Headers,
       },
       data () {
         return {
           headInfo: {
             shopName: '蜗牛工作室',
-            img: require("../../assets/imghead.jpg"),
+            img: require("../assets/imghead.jpg"),
             number: '973'
           },
           ReputationLevel: [
-            require("../../assets/huangguan.png"),
-            require("../../assets/huangguan.png"),
-            require("../../assets/huangguan.png"),
-            require("../../assets/huangguan.png"),
-            require("../../assets/huangguan.png"),
+            require("../assets/huangguan.png"),
+            require("../assets/huangguan.png"),
+            require("../assets/huangguan.png"),
+            require("../assets/huangguan.png"),
+            require("../assets/huangguan.png"),
           ],
           sheetVisible: false,
           actions: [],
@@ -106,7 +104,7 @@
             {status: "会员", id: 6}
           ],
           tabContent: [
-            {path: 'scroll'},
+            {path: 'homePage'},
             // {path: 'scroll'},
             // {path: 'scroll'},
             // {path: 'scroll'},
@@ -197,7 +195,7 @@
 <style scoped>
   .banner {
     height: 138px;
-    background-image: url("../../assets/banner.jpg");
+    background-image: url("../assets/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }

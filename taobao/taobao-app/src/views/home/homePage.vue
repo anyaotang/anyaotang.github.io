@@ -44,13 +44,6 @@
           </div>
           <div>
             <x-table full-bordered="true" class="xtable">
-<!--              <thead>-->
-              <!--              <tr>-->
-              <!--                <th>Product</th>-->
-              <!--                <th>Price</th>-->
-              <!--                <th>Quantity</th>-->
-              <!--              </tr>-->
-              <!--              </thead>-->
               <tbody class="tbody">
               <tr>
                 <td v-for="(item,index) in tableNumber" :key="index" style="border: 1px solid #080202;">
@@ -133,10 +126,10 @@
 </template>
 
 <script>
-  import stickySlot from '../../components/StickySlot'
+  import stickySlot from '../../components/stickySlot/StickySlot'
   import { Tab, TabItem, XTable, Flexbox, FlexboxItem  } from 'vux'
   export default {
-        name: "scroll2",
+        name: "homePage",
       data () {
           return {
             footerData: [],
