@@ -9,7 +9,26 @@
           <span>每满{{boxItem.num1}}减{{boxItem.num2}},上不封顶</span>
         </div>
         <div class="liveBroadcast">
-
+          <a href="#">
+            <flexbox>
+              <flexbox-item>
+                <img src="../../assets/images/zhibo.png" alt="">
+              </flexbox-item>
+              <flexbox-item>
+                <h2>新品预览 冲榜赢福利</h2>
+                <div class="leftzhibo">
+                  <span class="btnzhibo">♥直播中</span><span class="numberWatch">288123观看</span>
+                </div>
+                <div class="leftzhibobottom">
+                  <ul>
+                    <li v-for="(item,index) in leftzhibobottom" :key="index">
+                      <img :src="item.img_url" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </flexbox-item>
+            </flexbox>
+          </a>
         </div>
         <sticky-slot class="stickyTop1">
           <div class="tab">
@@ -30,17 +49,17 @@
         <!--聚划算-->
         <div class="con">
           <div class="con_active">
-
           </div>
           <swiper :options="swiperOption1" class="National_active">
-            <swiper-slide>1111</swiper-slide>
-            <swiper-slide>2222</swiper-slide>
-            <swiper-slide>1111</swiper-slide>
-            <swiper-slide>2222</swiper-slide>
+            <swiper-slide v-for="(item,index) in bannerImages" :key="index">
+              <a href="#"><img :src="item.img_url" alt=""></a>
+            </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>
           <div class="snbl">
-            <img src="../../assets/activy.jpg" alt="">
+            <a href="#">
+              <img src="../../assets/images/banner04.png" alt="">
+            </a>
           </div>
           <div>
             <x-table full-bordered="true" class="xtable">
@@ -67,23 +86,23 @@
           </div>
           <!--专区6折限时秒杀-->
           <div class="special">
-            <Flexbox>
-              <FlexboxItem class="FlexboxItem">132</FlexboxItem>
-            </Flexbox>
-            <Flexbox>
-              <FlexboxItem class="FlexboxItem">
+            <flexbox>
+              <flexboxItem class="FlexboxItem">132</flexboxItem>
+            </flexbox>
+            <flexbox>
+              <flexboxItem class="FlexboxItem">
                 <span class="liu">
                   专区<span style="color: #e20d00;">6折限时秒杀</span>【看直播再领无门槛劵最高<span style="color: #e20d00;">再减50元</span>】
                 </span>
-              </FlexboxItem>
-            </Flexbox>
-            <Flexbox>
-              <FlexboxItem class="FlexboxItem">
+              </flexboxItem>
+            </flexbox>
+            <flexbox>
+              <flexboxItem class="FlexboxItem">
                 <div class="fen">
                   <span>疯抢中<i></i></span>
                 </div>
-              </FlexboxItem>
-            </Flexbox>
+              </flexboxItem>
+            </flexbox>
           </div>
           <div style="position: relative">
             <div class="clearance borderColor">
@@ -127,13 +146,13 @@
 
 <script>
   import stickySlot from '../../components/stickySlot/StickySlot'
-  import { Tab, TabItem, XTable, Flexbox, FlexboxItem  } from 'vux'
+  // import { } from 'vux'
   export default {
         name: "homePage",
       data () {
           return {
-            footerData: [],
-            tabItems: [
+              footerData: [],
+              tabItems: [
               {status: "首页", id: 0},
               {status: "宝贝", id: 1},
               {status: "造物节", id: 2},
@@ -142,8 +161,8 @@
               {status: "买家秀", id: 5},
               {status: "会员", id: 6}
             ],
-            // 轮播
-            swiperOption: {
+              // 轮播
+              swiperOption: {
               pagination: {
                 el: '.swiper-pagination',
                 clickable: true // 允许点击小圆点跳转
@@ -157,18 +176,18 @@
               // },
               loop: false
             },
-            swiperOption1: {
+              swiperOption1: {
               pagination: {
                 el: '.swiper-pagination',
                 clickable: true // 允许点击小圆点跳转
               },
               loop: true
             },
-            colors : {
+              colors : {
               color1: '#fff5dc',
               color2:'#eb2b20',
             },
-            swiperNum: [
+              swiperNum: [
               {
                 title: '9.24聚划算',
                 content: '全店95折包邮',
@@ -195,46 +214,71 @@
                 activity: '每周六上新'
               },
             ],
-            boxItem : {
+              boxItem : {
               name: '跨店满减',
               time: '2019.09.24-2019.09.26',
               num1: '200',
               num2: '15'
             },
-            tableNumber: [
+              tableNumber: [
               {time: '9.22~9.26',type: '店铺微淘',introduction: '2.5W + 实物福利'},
               {time: '9.22~9.26',type: '店铺微淘',introduction: '2.5W + 实物福利'},
               {time: '9.22~9.26',type: '店铺微淘',introduction: '2.5W + 实物福利'},
               {time: '9.22~9.26',type: '店铺微淘',introduction: '2.5W + 实物福利'},
             ],
-            div19Item1: {
+              div19Item1: {
               title: '『转发抽奖』',
               introduce: '微博·孤版样衣',
               content: '蜗牛微博：蜗牛工作室WNGZS'
             },
-            div19Item2: {
+              div19Item2: {
                 title: '『互动抽奖』',
                 introduce: '微信·绝版美衣',
                 content: '蜗牛微信：蜗牛工作室'
-              }
+              },
+              bannerImages: [
+                  {
+                      imgsrc: '',
+                      img_url: require("../../assets/images/banner01.png")
+                  },
+                  {
+                      imgsrc: '',
+                      img_url: require("../../assets/images/banner02.png")
+                  },
+                  {
+                      imgsrc: '',
+                      img_url: require("../../assets/images/banner03.png")
+                  }
+              ],
+              leftzhibobottom: [
+                  {
+                      imgsrc: '',
+                      img_url: require("../../assets/images/xiaop.png")
+                  },
+                  {
+                      imgsrc: '',
+                      img_url: require("../../assets/images/xiaop.png")
+                  },
+                  {
+                      imgsrc: '',
+                      img_url: require("../../assets/images/xiaop.png")
+                  }
+              ]
           }
       },
     components: {
-      stickySlot,
-      Tab,
-      TabItem,
-      XTable,
-      Flexbox,
-      FlexboxItem
+      stickySlot
     },
     mounted() {
 
     }
-
   }
 </script>
 
 <style scoped>
+  a {
+    color: #000;
+  }
   /*
    通过设置top的值，控制固定的位置，0是顶部，值为number(px)
  */
@@ -285,10 +329,44 @@
   }
   .liveBroadcast {
     background-color: white;
-    margin: 0 auto;
-    width: 90%;
-    height: 180px;
+    margin: 3px auto;
+    width: 94%;
+    height: 159px;
     border-radius: 1em;
+  }
+  .liveBroadcast img {
+    width: 170px;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+  }
+  .liveBroadcast h2 {
+    font-size: 16px;
+    text-align: center;
+  }
+  .liveBroadcast .leftzhibo {
+    padding:10px 0 0 10px;
+  }
+  .liveBroadcast  .btnzhibo {
+    background: #ff442c;
+    font-size: 12px;
+    padding: 3px 5px;
+    border-radius: 0.2em;
+    color: white;
+  }
+  .liveBroadcast .numberWatch {
+    font-size: 13px;
+    color: gray;
+    padding-left: 8px;
+  }
+  .liveBroadcast .leftzhibobottom {
+    margin-top: 50px;
+    padding: 0 0 0 5px;
+  }
+  .liveBroadcast .leftzhibobottom ul li img {
+    width: 45px;
+    border-radius: 0px;
+    float: left;
+    padding-left: 5px;
   }
   .backColor {
     background-color: #f2f2f2;
@@ -340,15 +418,17 @@
   }
   .National_active {
     border: 1px solid #080202;
-    height: 75px;
     background-color: white;
     border-radius: 0.8em;
     margin-top: 10px;
   }
+  .National_active a img {
+    width: 100%;
+    height: 120px;
+  }
   .snbl {
     border: 1px solid #080202;
     width: 92%;
-    /*height: 200px;*/
     margin: 15px auto;
   }
   .snbl img {
@@ -477,5 +557,22 @@
     font-size: 12px;
     color: #eb4e0b;
     letter-spacing: 0.2em;
+  }
+</style>
+<style>
+  /*.swiper-wrapper {*/
+  /*  margin:22px 0px 40px 20px;*/
+  /*}*/
+  /*自定义swiper分页器的样式*/
+  .swiper-pagination .swiper-pagination-bullet{
+    width: 9px;
+    height: 9px;
+    opacity: 1;
+    background: #BBB9B9;
+  }
+  .swiper-pagination .swiper-pagination-bullet-active {
+    width: 9px;
+    height: 9px;
+    background: #ff1c1c;
   }
 </style>

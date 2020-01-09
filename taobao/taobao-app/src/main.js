@@ -17,7 +17,19 @@ import 'mint-ui/lib/style.css'
 import VueScroller from 'vue-scroller'
 
 // vux组件
-import {LoadingPlugin, ToastPlugin, ConfirmPlugin, DatetimePlugin, Divider, Badge} from 'vux'
+import {
+  LoadingPlugin,
+  ToastPlugin,
+  ConfirmPlugin,
+  DatetimePlugin,
+  Divider,
+  Badge,
+  Tab,
+  TabItem,
+  XTable,
+  Flexbox,
+  FlexboxItem
+} from 'vux'
 
 // 引入storeVuex
 import store from './store/store'
@@ -34,6 +46,12 @@ Vue.use(ConfirmPlugin)
 Vue.use(DatetimePlugin)
 Vue.component('divider', Divider)
 Vue.component('badge', Badge)
+Vue.component('tab',Tab)
+Vue.component('tabItem',TabItem)
+Vue.component('x-table',XTable)
+Vue.component('flexbox',Flexbox)
+Vue.component('flexboxItem',FlexboxItem)
+
 
 Vue.config.productionTip = false
 
