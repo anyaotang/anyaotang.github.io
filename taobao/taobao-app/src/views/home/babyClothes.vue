@@ -2,38 +2,37 @@
   <div class="backColor">
     <div class="box">
       <div class="classcation">
-        <span>综合</span>
-        <span>销量</span>
-        <span>新品</span>
-        <span>价格</span>
+        <ul>
+          <li>综合</li>
+          <li>销量</li>
+          <li>新品</li>
+          <li>价格</li>
+        </ul>
       </div>
+      <div class="con">
         <ul>
           <a href="#">
             <li v-for="(item,index) in list" :key="index">
               <img :src="item.src" alt="">
-<!--              <p>{{item.des}}</p>-->
-<!--              <p>￥{{item.price}}</p>-->
-<!--              <h6>{{item.number}}人付款</h6>-->
-<!--              <i class="iconfont icon-tuichu"></i>-->
+              <p class="des">{{item.des}}</p>
+              <p class="price">￥{{item.price}}</p>
+              <p class="number">{{item.number}}人付款</p>
+              <i class="iconfont icon-gouwuche iconcxie"></i>
             </li>
           </a>
         </ul>
+      </div>
     </div>
-    <div>
-      <section class="section">
-        <div class="wrap">
-          <div class="col-4 c1">1</div>
-          <div class="col-4 c2">2</div>
-          <div class="col-4 c3">3</div>
-          <div class="col-4 c4">4</div>
-        </div>
-        <div class="wrap">
-          <div class="col-4 c5">5</div>
-          <div class="col-4 c6">6</div>
-        </div>
-      </section>
+<!--    <div>-->
+<!--      <section class="section">-->
+<!--        <div class="wrap">-->
+<!--          <div class="col-4 c5">5</div>-->
+<!--          <div class="col-4 c5">23</div>-->
+<!--          <div class="col-4 c6">6</div>-->
+<!--        </div>-->
+<!--      </section>-->
 
-    </div>
+<!--    </div>-->
   </div>
 </template>
 
@@ -96,49 +95,73 @@
 </script>
 
 <style scoped>
-  .wrap{
-    margin:10px auto;
-    /*max-width:1280px;*/
-    /*min-width:1024px;*/
-  }
-  .wrap{
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-  }
-  .col-4{
-    height:30px;
-    border:1px solid #999;
-    -webkit-box-flex:1;
+  .backColor {
+    background: #f7f5f5;
+    margin-bottom: 10px;
   }
   a {
     color: #000;
   }
   .box {
-    /*width: 95%;*/
-    /*margin: 0 auto;*/
+    width: 95%;
+    margin: 0 auto;
     overflow: hidden;
   }
   .box .classcation {
-    padding: 15px 0;
+    padding: 12px 0;
     color: red;
+    font-size: 13px;
   }
-  .box ul {
+  .box .classcation ul {
+  }
+  .box .classcation ul li {
+    display: inline;
+    padding: 3px 10px;
+    background: #fff;
+    width: 100px;
+    border-radius: 1em;
+    text-align: center;
+  }
+  .box .classcation ul li:first-child {
+    /*padding-left: 0;*/
+  }
+  .box .con ul {
     display: flex;
     flex-wrap: wrap;
   }
-  .box li {
+  .box .con li {
     width: 160px;
     padding: 3px;
     list-style: none;
-    margin-bottom: 12px;
-    border: 1px solid #ebebeb;
+    margin-bottom: 10px;
+    background: #fff;
     border-radius: 0.5em;
   }
-  .box li:nth-child(2n-1) {
+  .box .con li:nth-child(2n-1) {
     float: left;
   }
-  .box li:nth-child(2n) {
+  .box .con li:nth-child(2n) {
     float: right;
+  }
+  .box .con ul li .des {
+    font-size: 13px;
+  }
+  .box .price,.number,.iconcxie {
+    padding-left: 18px;
+    display: inline;
+  }
+  .box .price {
+    font-size: 19px;
+    padding-left: 0px;
+    color: #ff3522;
+  }
+  .box .iconcxie {
+    color: #e2050b;
+  }
+  .box .number {
+    font-size: 11px;
+    padding-left: 0px;
+    color: #9ca29a;
   }
   .box img {
     height: 160px;

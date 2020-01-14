@@ -9,7 +9,7 @@
             <span>
               <i class="iconfont icon-gengduo" @click="more"></i>
               <i class="iconfont icon-vertical_line"></i>
-              <i class="iconfont icon-tuichu" @click="btnClose"></i>
+              <i class="iconfont icon-tuichu" @click="btnClose" style="font-size: 12px"></i>
             </span>
           </li>
         </ul>
@@ -58,6 +58,9 @@
 <script>
     import homePage from "./home/homePage";
     import babyClothes from "./home/babyClothes";
+    import newProducts from "./home/newProducts";
+    import realShooting from "./home/realShooting";
+    import buyShop from "./home/buyShop";
     import member from "./home/member";
     import stickySlot from '../components/stickySlot/StickySlot'
     // import TestNav from "../components/testNav";
@@ -69,6 +72,9 @@
           stickySlot,
           homePage,
           babyClothes,
+          newProducts,
+          realShooting,
+          buyShop,
           member
         // TestNav,
         // Dao,
@@ -94,20 +100,18 @@
           tabItems: [
             {status: "首页", id: 0},
             {status: "宝贝", id: 1},
-            {status: "造物节", id: 2},
-            {status: "新品", id: 3},
-            {status: "实拍", id: 4},
-            {status: "买家秀", id: 5},
-            {status: "会员", id: 6}
+            {status: "新品", id: 2},
+            {status: "实拍", id: 3},
+            {status: "买家秀", id: 4},
+            {status: "会员", id: 5}
           ],
           tabContent: [
             {path: 'homePage'},
             {path: 'babyClothes'},
-            {path: 'member'},
-            // {path: 'scroll'},
-            // {path: 'scroll'},
-            // {path: 'scroll'},
-            // {path: 'scroll'}
+            {path: 'newProducts'},
+            {path:'realShooting'},
+            {path: 'buyShop'},
+            {path: 'member'}
           ],
           index01: 0,
           index: 0,
