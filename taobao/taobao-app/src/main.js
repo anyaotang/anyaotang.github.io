@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 
 // 引入字体图标样式
-import '@/assets/icon/iconfont.css'
+import '@/assets/iconfont/iconfont.css'
 // swiper 插件
 import 'swiper/dist/css/swiper.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -28,7 +28,8 @@ import {
   TabItem,
   XTable,
   Flexbox,
-  FlexboxItem
+  FlexboxItem,
+  Toast,
 } from 'vux'
 
 // 引入storeVuex
@@ -47,10 +48,11 @@ Vue.use(DatetimePlugin)
 Vue.component('divider', Divider)
 Vue.component('badge', Badge)
 Vue.component('tab',Tab)
-Vue.component('tabItem',TabItem)
+Vue.component('tab-item',TabItem)
 Vue.component('x-table',XTable)
 Vue.component('flexbox',Flexbox)
-Vue.component('flexboxItem',FlexboxItem)
+Vue.component('flexbox-item',FlexboxItem)
+Vue.component('toast',Toast)
 
 
 Vue.config.productionTip = false

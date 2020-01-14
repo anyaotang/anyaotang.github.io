@@ -1,25 +1,25 @@
 <template>
     <div class="banner">
       <div class="con">
-        <Flexbox>
-          <FlexboxItem>
-            <span class="shopName">{{headInfo.shopName}}</span>
-          </FlexboxItem>
-          <FlexboxItem class="btn">
-            <!--        <button class="button"  @click="sheetVisible = true" size="large" ref="btn1"><i class="iconfont icon-guanzhu"  style="font-size: 20px;"></i>关注</button>-->
-            <button class="button"  @click="sheetVisible = true" size="large" ref="btn1">已关注</button>
-            <button class="btn_search button">
-              <span class="btn_close" @click="more"></span>
-              <!--          <div class="btn_search btn_line"></div>-->
-              <!--          <span class=" close iconfont icon-close-small" style="font-size: 20px;"></span>-->
-            </button>
-            <mt-actionsheet :actions="actions" v-model="sheetVisible" cancelText="容朕想想"></mt-actionsheet>
-          </FlexboxItem>
-        </Flexbox>
+        <ul class="top_1">
+          <li>{{headInfo.shopName}}</li>
+          <li>
+            <span v-show="follow===0" @click="guanzhu" ref="btn1"><i class="iconfont icon-icon-test"></i>关注</span>
+            <span v-show="follow===1"  @click="sheetVisible = true" ref="btn1">已关注</span>
+            <span>
+              <i class="iconfont icon-gengduo" @click="more"></i>
+              <i class="iconfont icon-vertical_line"></i>
+              <i class="iconfont icon-tuichu" @click="btnClose"></i>
+            </span>
+          </li>
+        </ul>
+        <mt-actionsheet :actions="actions" v-model="sheetVisible" cancelText=""></mt-actionsheet> <!--cancelText:默认值是取消-->
+<!--            <mt-actionsheet :actions="actions" v-model="sheetVisible" cancelText="容朕想想"></mt-actionsheet>-->
         <flexbox class="con_icon">
-          <flexbox-item class="flexbox-item" :span="1/7">
-            <img :src="headInfo.img" alt="">
-          </flexbox-item>
+<!--          <flexbox-item class="flexbox-item" :span="2/8">-->
+<!--&lt;!&ndash;            <img :src="headInfo.img" alt="">&ndash;&gt;-->
+<!--           -->
+<!--          </flexbox-item>-->
           <flexbox-item class="flexbox-item" :span="1/7">
             <ul>
               <li v-for="(item,index) in ReputationLevel" :key="index">
@@ -32,7 +32,7 @@
       </div>
       <div class="backColor">
         <sticky-slot class="stickyTop">
-          <tab :line-width=2  active-color='red' prevent-default v-model="index01" @on-before-index-change="switchTabItem">
+          <tab :line-width="2" default-color="#000"  active-color='red' prevent-default v-model="index01" @on-before-index-change="switchTabItem">
             <tab-item class="vux-center" v-for="(item,index) in tabItems" :key="index">{{item.status}}</tab-item>
           </tab>
         </sticky-slot>
@@ -57,29 +57,27 @@
 
 <script>
     import homePage from "./home/homePage";
+    import babyClothes from "./home/babyClothes";
+    import member from "./home/member";
     import stickySlot from '../components/stickySlot/StickySlot'
-    import { Tab, TabItem, Flexbox, FlexboxItem, Toast, Swiper, SwiperItem } from 'vux'
     // import TestNav from "../components/testNav";
     // import Headers from '../components/home/headers'
     // import Dao from '../components/Dao'
     export default {
       name: "Index",
       components: {
-        homePage,
-        stickySlot,
-        Tab,
-        TabItem,
-        Flexbox,
-        FlexboxItem,
-        Toast,
-        Swiper,
-        SwiperItem,
+          stickySlot,
+          homePage,
+          babyClothes,
+          member
         // TestNav,
         // Dao,
         // Headers,
       },
       data () {
         return {
+          follow:0,
+          sheetVisible: false,
           headInfo: {
             shopName: '蜗牛工作室',
             img: require("../assets/imghead.jpg"),
@@ -92,7 +90,6 @@
             require("../assets/huangguan.png"),
             require("../assets/huangguan.png"),
           ],
-          sheetVisible: false,
           actions: [],
           tabItems: [
             {status: "首页", id: 0},
@@ -105,8 +102,8 @@
           ],
           tabContent: [
             {path: 'homePage'},
-            // {path: 'scroll'},
-            // {path: 'scroll'},
+            {path: 'babyClothes'},
+            {path: 'member'},
             // {path: 'scroll'},
             // {path: 'scroll'},
             // {path: 'scroll'},
@@ -143,55 +140,75 @@
           // },1500)
         },
         //
-        openAlbum() {
-          console.log('容朕想想');
+          guanzhu () {
+            this.$vux.toast.show({
+                text: '关注成功！',
+            })
+            this.follow = 1
+          },
+          openAlbum() {
+            console.log('容朕想想');
+            this.$vux.toast.show({
+                text: '谢谢！！！'
+            })
+          },
+          takePhoto() {
+            console.log(this.sheetVisible);
+            this.follow = 0
+            if (this.follow){
+              this.sheetVisible = false
+              this.$refs.btn1.style.innerText =  '关注'
+            } else {
+              this.sheetVisible = true
+              this.$refs.btn1.style.innerText =  '已关注'
+            }
+          },
+          more () {
+            this.$vux.toast.show({
+              text: '没有此功能的啦！！！',
+              type: 'cancel'
+            })
+          },
+          btnClose () {
+            const _this = this
+            _this.$vux.confirm.show({
+              title: '确定退出吗？',
+              onConfirm() {
+                  this.$router.go(-1);
+              },
+              onCancel() {
+                  console.log(_this)
+              }
+            })
+          },
+          switchTabItem (index) {
+            console.log('on-before-index-change', index)
+            // if(index === 0) {
+            //   this.$router.push({
+            //     path: 'scroll'
+            //   })
+            // }
+            this.$vux.loading.show({
+              text: 'loading'
+            })
+            setTimeout(() => {
+              this.$vux.loading.hide()
+              this.index01 = index
+            }, 300)
+          },
         },
-        takePhoto() {
-          console.log(this.sheetVisible);
-          if (this.sheetVisible){
-            this.sheetVisible = false
-            this.$refs.btn1.style.innerText =  '关注'
-          } else {
-            this.sheetVisible = true
-            this.$refs.btn1.style.innerText =  '已关注'
-          }
-        },
-        more () {
-          // console.log(this.$vux)
-          this.$vux.toast.show({
-            text: '没有此功能的啦！！！'
-          })
-        },
-        switchTabItem (index) {
-          console.log('on-before-index-change', index)
-          // if(index === 0) {
-          //   this.$router.push({
-          //     path: 'scroll'
-          //   })
-          // }
-          this.$vux.loading.show({
-            text: 'loading'
-          })
-          setTimeout(() => {
-            this.$vux.loading.hide()
-            this.index01 = index
-          }, 400)
-        },
-      },
       mounted() {
         this.actions = [{
           name: '取消关注',
           method: this.takePhoto
-        },
-          //   {
-          //   name: '容朕想想',
-          //   method: this.openAlbum
-          // }
+        }, {
+            name: '容朕想想',
+            method: this.openAlbum
+          }
         ];
       }
     }
 </script>
-
 <style scoped>
   .banner {
     height: 138px;
@@ -201,11 +218,11 @@
   }
   .con {
     color: white;
-    padding: 16px 10px 0px 10px;
+    padding: 10px 10px 0px 10px;
     font-size: 12px;
   }
-  .shopName{
-    font-size: 16px;
+  .clear {
+    clear: both;
   }
   .con_icon {
     padding-top: 4px;
@@ -213,23 +230,38 @@
   .con_icon .flexbox-item {
     /*border: 1px solid red;*/
   }
-  img {
+  .con_icon img {
     width: 50px;
   }
-  ul {
+  .con_icon ul {
     overflow: hidden;
   }
-  li {
+  .con_icon li {
     width: calc(100%/5);
     float: left;
   }
-  li img {
+  .con_icon li img {
     width: 100%;
   }
-  .btn {
-    text-align: right;
+  .top_1 li {
+    float: left;
   }
-
+  .top_1 li:first-child {
+    float: left;
+    font-size: 16px;
+  }
+  .top_1 li:last-child {
+    float: right;
+  }
+  .top_1 li:last-child span {
+    background: rgba(000,0,0,0.6);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 2em;
+    border: 1px solid #baa181;
+  }
+  .top_1 li:last-child span:last-child {
+  }
   .btn .button {
     outline: none;
     background: none;
@@ -247,11 +279,13 @@
     content: "• • • ";
     font-size: 15px;
   }
+
+
   /*
    通过设置top的值，控制固定的位置，0是顶部，值为number(px)
  */
   .backColor {
-    background-color: white;
+    /*background-color: white;*/
   }
   /*.tab-swiper {*/
   /*  background-color: indianred;*/

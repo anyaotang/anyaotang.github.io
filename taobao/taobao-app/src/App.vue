@@ -18,7 +18,6 @@ export default {
     text-decoration: none;
   }
 #app {
-  text-align: center;
 }
 
 </style>

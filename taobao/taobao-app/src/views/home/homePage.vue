@@ -87,21 +87,21 @@
           <!--专区6折限时秒杀-->
           <div class="special">
             <flexbox>
-              <flexboxItem class="FlexboxItem">132</flexboxItem>
+              <flexbox-item class="FlexboxItem">132</flexbox-item>
             </flexbox>
             <flexbox>
-              <flexboxItem class="FlexboxItem">
+              <flexbox-item class="FlexboxItem">
                 <span class="liu">
                   专区<span style="color: #e20d00;">6折限时秒杀</span>【看直播再领无门槛劵最高<span style="color: #e20d00;">再减50元</span>】
                 </span>
-              </flexboxItem>
+              </flexbox-item>
             </flexbox>
             <flexbox>
-              <flexboxItem class="FlexboxItem">
+              <flexbox-item class="FlexboxItem">
                 <div class="fen">
                   <span>疯抢中<i></i></span>
                 </div>
-              </flexboxItem>
+              </flexbox-item>
             </flexbox>
           </div>
           <div style="position: relative">
@@ -180,6 +180,10 @@
               pagination: {
                 el: '.swiper-pagination',
                 clickable: true // 允许点击小圆点跳转
+              },
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
               },
               loop: true
             },
@@ -291,6 +295,7 @@
   .tab {
     /*border: 1px solid red;*/
     margin-top: 11px;
+    text-align: center;
   }
   .swiper-css {
     height: 94px;
@@ -369,7 +374,7 @@
     padding-left: 5px;
   }
   .backColor {
-    background-color: #f2f2f2;
+    background-color: #e0e0e0;
   }
 
   .color1 {
@@ -493,13 +498,14 @@
   }
   .clearbtn {
     border: 1px solid black;
-    padding: 3px 12px 3px 12px;
+    padding: 2px 12px 3px 12px;
     border-radius: 2em;
     color: white;
     width: 16%;
     background-color: #e20d00;
     font-size: 12px;
     margin: 0 auto;
+    text-align: center;
     position: absolute;
     top:95%;
     left: 0;
