@@ -1,6 +1,7 @@
 <template>
     <div>
-      实拍，请看会员页
+      此页暂无内容！！！
+<!--      <img src="../../assets/images/404.png" alt="">-->
     </div>
 </template>
 
@@ -17,5 +18,9 @@
     /*  */
     text-align: center;
     font-size: 20px;
+  }
+  img {
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 </style>
