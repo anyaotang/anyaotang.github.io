@@ -243,7 +243,7 @@
     background: #fff;
     border-radius: 1em;
     width: 47%;
-    line-height: 1.2em;
+    line-height: 1.5em;
     margin-left: 6px;
   }
   .con_18 .con_18_1 li:first-child {
