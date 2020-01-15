@@ -3,8 +3,8 @@
       <div class="top">
         <img src="../../assets/images/vip.png" alt="">
         <div class="top_bottom"></div>
-        <div class="btn">
-          <a href="#" @click="actives">立即加入会员</a>
+        <div class="btn"  @click="actives">
+          <a href="#">立即加入会员</a>
         </div>
       </div>
       <div class="active">
@@ -22,8 +22,8 @@
                 {{item.integral}}积分
               </p>
               <p class="Surplus">剩余{{item.number}}</p>
-              <p class="btns">
-                <a href="#" @click="actives">立即入会</a>
+              <p class="btns"  @click="actives">
+                <a href="#">立即入会</a>
               </p>
             </flexbox-item>
           </flexbox>

@@ -1,6 +1,5 @@
 const Index = () => import(/* webpackChunkName: "group-home" */ '@/views/index.vue')
 const HomePage = () => import(/* webpackChunkName: "group-home" */ '@/views/home/homePage.vue')
-const BabyClothes = () => import(/* webpackChunkName: "group-home" */ '@/views/home/babyClothes.vue')
 const NewProducts = () => import(/* webpackChunkName: "group-home" */ '@/views/home/newProducts.vue')
 const RealShooting = () => import(/* webpackChunkName: "group-home" */ '@/views/home/realShooting.vue')
 const BuyShop = () => import(/* webpackChunkName: "group-home" */ '@/views/home/buyShop.vue')
@@ -15,10 +14,6 @@ const router = {
       path: '/homePage',
       name: 'HomePage',
       component: HomePage
-    }, {
-      path: '/babyclothes',
-      name: 'Babyclothes',
-      component: BabyClothes
     }, {
       path: '/newProducts',
       name: 'NewProducts',
